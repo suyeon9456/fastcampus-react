@@ -2,6 +2,7 @@ import React from 'react'
 import Profile from './Profile'
 import { NavLink, Route } from 'react-router-dom'
 import WithRouterSample from './WithRouterSample'
+import RouterHookSample from './RouterHookSample'
 
 function Profiles () {
   return (
@@ -34,6 +35,7 @@ function Profiles () {
       /> {/* render를 사용하면 바로 함수형 컴포넌트를 넣어줄 수 있음 */}
       <Route path="/profiles/:username" component={Profile} />
       <WithRouterSample />
+      <RouterHookSample />
     </div>
   )
 }
