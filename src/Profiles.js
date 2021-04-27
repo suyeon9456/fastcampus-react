@@ -1,6 +1,7 @@
 import React from 'react'
 import Profile from './Profile'
 import { Link, Route } from 'react-router-dom'
+import WithRouterSample from './WithRouterSample'
 
 function Profiles () {
   return (
@@ -20,6 +21,7 @@ function Profiles () {
         render={() => <div>사용자를 선택해주세요</div>}
       /> {/* render를 사용하면 바로 함수형 컴포넌트를 넣어줄 수 있음 */}
       <Route path="/profiles/:username" component={Profile} />
+      <WithRouterSample />
     </div>
   )
 }
