@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 import About from './About'
 import HistorySample from './HistorySample'
 import Home from './Home'
@@ -23,10 +23,18 @@ function App () {
         </li>
       </ul>
       <hr />
-      <Route path="/" component={Home} exact /> {/* exact 는 경로가 path와 완전히 일치할 때만 해당 컴포넌트를 보여준다는 의미 */}
-      <Route path="/about" component={About} />
-      <Route path="/profiles" component={Profiles} />
-      <Route path="/history" component={HistorySample} />
+      <Switch>
+        <Route path="/" component={Home} exact /> {/* exact 는 경로가 path와 완전히 일치할 때만 해당 컴포넌트를 보여준다는 의미 */}
+        <Route path="/about" component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route path="/history" component={HistorySample} />
+        <Route render={({ location }) =>
+          <div>
+            <h2>이 페이지는 존재하지 않습니다.</h2>
+            <p>{location.pathname}</p>
+          </div>}
+        />
+      </Switch>
     </div>
   )
 }

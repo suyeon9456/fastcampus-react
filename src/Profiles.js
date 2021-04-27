@@ -1,6 +1,6 @@
 import React from 'react'
 import Profile from './Profile'
-import { Link, Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 import WithRouterSample from './WithRouterSample'
 
 function Profiles () {
@@ -9,10 +9,22 @@ function Profiles () {
       <h3>사용자 목록</h3>
       <ul>
         <li>
-          <Link to="/profiles/suyeon">suyeon</Link>
+          <NavLink
+            to="/profiles/suyeon"
+            activeStyle={{ background: 'black', color: 'white' }}
+            activeClassName="active"
+            // isActive={({ match, location }) => } // true를 반환하면 스타일이 들어가고 아니면 안들어감
+          >
+            suyeon
+          </NavLink>
         </li>
         <li>
-          <Link to="/profiles/woogie">woogie</Link>
+          <NavLink
+            to="/profiles/woogie"
+            activeStyle={{ background: 'black', color: 'white' }}
+          >
+            woogie
+          </NavLink>
         </li>
       </ul>
       <Route
